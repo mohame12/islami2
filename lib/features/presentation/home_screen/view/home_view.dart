@@ -5,6 +5,15 @@ class HomeView extends StatelessWidget {
   static const String id='HomeView';
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(image: AssetImage('assets/images/background.png'),fit: BoxFit.cover)
+        ),
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+          ),
+        ));
   }
 }
