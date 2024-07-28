@@ -5,8 +5,6 @@ class SettingsTap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.cyan,
-    );
+    return Center(child: Text('Settings'));
   }
 }

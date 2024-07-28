@@ -15,7 +15,7 @@ class Provider1 extends ChangeNotifier
     BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/icon_hadeth.png')), label: '',backgroundColor: Color(0xffB7935F),),
     BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/icon_sebha.png')), label: '',backgroundColor: Color(0xffB7935F),),
     BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/icon_radio.png')), label: '',backgroundColor: Color(0xffB7935F),),
-    BottomNavigationBarItem(icon: Icon(Icons.settings), label: ''),
+    BottomNavigationBarItem(icon: Icon(Icons.settings), label: '',backgroundColor: Color(0xffB7935F),),
   ];
   List<Widget>list_of_body=[
     QuranTap(),

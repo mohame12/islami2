@@ -5,8 +5,6 @@ class AhadethTap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.red,
-    );
+    return Center(child: Text('Ahadeth'));
   }
 }
