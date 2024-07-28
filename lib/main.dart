@@ -4,22 +4,25 @@ import 'package:islami2/features/presentation/home_screen/view/home/home_view.da
 import 'package:provider/provider.dart';
 void main()
 {
-  runApp(ChangeNotifierProvider(
-    create: (context)=>Provider1(),
-      child: MyApp()));
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var provider=Provider.of<Provider1>(context);
-  return MaterialApp(
-    debugShowCheckedModeBanner: false,
-    initialRoute: HomeView.id,
-    routes: {
-      HomeView.id:(context)=>HomeView(),
-    },
+
+  return MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (context) => Provider1(),),
+    ],
+    child: MaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialRoute: HomeView.id,
+      routes: {
+        HomeView.id:(context)=>HomeView(),
+      },
+    ),
   );
   }
 }
