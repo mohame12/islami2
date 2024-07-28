@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:islami2/features/presentation/home_screen/view/home/taps/ahadeth.dart';
-import 'package:islami2/features/presentation/home_screen/view/home/taps/quran.dart';
-import 'package:islami2/features/presentation/home_screen/view/home/taps/radio.dart';
-import 'package:islami2/features/presentation/home_screen/view/home/taps/sebha.dart';
-import 'package:islami2/features/presentation/home_screen/view/home/taps/settings.dart';
+import 'package:islami2/features/presentation/home_screen/view/home/taps/ahadeth_tap/views/ahadeth.dart';
+import 'package:islami2/features/presentation/home_screen/view/home/taps/quran_tap/views/quran.dart';
+import 'package:islami2/features/presentation/home_screen/view/home/taps/radio_tap/views/radio.dart';
+import 'package:islami2/features/presentation/home_screen/view/home/taps/sebha_tap/views/sebha.dart';
+import 'package:islami2/features/presentation/home_screen/view/home/taps/settings_tap/views/settings.dart';
 
 
 class Provider1 extends ChangeNotifier
