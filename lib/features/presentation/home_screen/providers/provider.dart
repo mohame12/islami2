@@ -29,4 +29,6 @@ class Provider1 extends ChangeNotifier
     index=indx;
     notifyListeners();
   }
+
+
 }
