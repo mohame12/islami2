@@ -18,7 +18,7 @@ class Provider1 extends ChangeNotifier
     const BottomNavigationBarItem(icon: Icon(Icons.settings), label: '',backgroundColor: Color(0xffB7935F),),
   ];
   List<Widget>list_of_body=[
-    const QuranTap(),
+    QuranTap(),
      const HadethTap(),
     const SebhaTap(),
     const RadioTap(),
