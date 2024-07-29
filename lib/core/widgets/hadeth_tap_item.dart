@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import '../styles/body_style.dart';
+
 
 class HadethTapItem extends StatelessWidget {
   const HadethTapItem({
@@ -16,7 +16,7 @@ class HadethTapItem extends StatelessWidget {
       padding: const EdgeInsetsDirectional.only(top: 20),
       child: GestureDetector(
           onTap:onTap,
-          child: Text('الحديث رقم ${index+1}',style: AppTextStyles.bodyText,)),
+          child: Text('الحديث رقم ${index+1}',style: Theme.of(context).textTheme.bodyMedium,)),
     ));
   }
 }

@@ -1,38 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:islami2/core/colors/colors.dart';
+import 'package:provider/provider.dart';
+
+import '../../settings_tap/providers/settings_provider.dart';
 
 class RadioTap extends StatelessWidget {
   const RadioTap({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var settingpro=Provider.of<SettingsProvider>(context);
+
     return Column(
       //crossAxisAlignment: CrossAxisAlignment.stretch,
       //mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Spacer(),
+        const Spacer(),
         Image.asset('assets/images/radio_image.png',height: 222,),
-        Spacer(),
-        Text('إذاعة القرآن الكريم',style: GoogleFonts.elMessiri(
-          fontSize: 20,
-          fontWeight: FontWeight.w600,
-        ),textDirection: TextDirection.rtl,
+        const Spacer(),
+        Text('إذاعة القرآن الكريم',style:
+          Theme.of(context).textTheme.headlineLarge,textDirection: TextDirection.rtl,
           textAlign: TextAlign.center,
         ),
-        Spacer(),
+        const Spacer(),
         Row(
           children: [
-            Spacer(),
-            IconButton(onPressed: (){}, icon: Icon(Icons.skip_next,color: Color(0xffB7935F),size: 33,)),
-            Spacer(),
-            IconButton(onPressed: (){}, icon: Icon(Icons.play_arrow,color: Color(0xffB7935F),size: 46,)),
-            Spacer(),
-            IconButton(onPressed: (){}, icon: Icon(Icons.skip_next_sharp,color: Color(0xffB7935F),size: 33,)),
-            Spacer(),
+            const Spacer(),
+            IconButton(onPressed: (){}, icon:  Icon(Icons.skip_next,color: settingpro.isdark? darkcolor:defcolor,size: 33,)),
+            const Spacer(),
+            IconButton(onPressed: (){}, icon:  Icon(Icons.play_arrow,color:settingpro.isdark? darkcolor:defcolor,size: 46,)),
+            const Spacer(),
+            IconButton(onPressed: (){}, icon:  Icon(Icons.skip_next_sharp,color: settingpro.isdark? darkcolor:defcolor,size: 33,)),
+            const Spacer(),
 
           ],
         ),
-        Spacer(),
+        const Spacer(),
 
       ],
     );

@@ -8,22 +8,25 @@ class SettingsProvider extends ChangeNotifier
 {
 
   bool isdark=false;
+  bool selectLight=true;
 
   changeToLightTheme()
   {
     isdark=false;
+    selectLight=true;
     notifyListeners();
   }
 
   changeToDarkTheme()
   {
     isdark=true;
+    selectLight=false;
     notifyListeners();
   }
 
   themeNavPressed({required BuildContext context})
   {
-    showModalBottomSheet(shape: RoundedRectangleBorder(borderRadius: BorderRadiusDirectional.only(topStart: Radius.circular(20),topEnd: Radius.circular(20))),context: context, builder: (context) =>
+    showModalBottomSheet(backgroundColor: isdark?Color(0xff141A2E):Colors.white,shape: RoundedRectangleBorder(borderRadius: BorderRadiusDirectional.only(topStart: Radius.circular(20),topEnd: Radius.circular(20))),context: context, builder: (context) =>
     Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
@@ -40,8 +43,8 @@ class SettingsProvider extends ChangeNotifier
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Light',style:AppTextStyles.bodyText2.copyWith(color: defcolor)),
-                Icon(Icons.check,color: defcolor,)
+                Text('Light',style:isdark?AppTextStyles.body25_meseri.copyWith(color:selectLight?defcolor :Colors.white):AppTextStyles.body25_meseri.copyWith(color:selectLight? defcolor:Colors.black)),
+                Icon(Icons.check,color:(isdark)?Colors.white:selectLight?defcolor:Colors.black,)
 
               ],
             ),
@@ -58,8 +61,8 @@ class SettingsProvider extends ChangeNotifier
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Dark',style:AppTextStyles.bodyText2,),
-                Icon(Icons.check,)
+                Text('Dark',style:isdark?AppTextStyles.body25_meseri.copyWith(color:selectLight? Colors.white:defcolor):AppTextStyles.body25_meseri.copyWith(color:selectLight? Colors.black:defcolor)),
+                Icon(Icons.check,color:(isdark)?selectLight?Colors.white:defcolor:Colors.black)
 
               ],
             ),
@@ -88,7 +91,7 @@ class SettingsProvider extends ChangeNotifier
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Arabic',style:AppTextStyles.bodyText2.copyWith(color: defcolor)),
+                      Text('Arabic',style:AppTextStyles.body25_meseri.copyWith(color: defcolor)),
                       Icon(Icons.check,color: defcolor,)
 
                     ],
@@ -103,7 +106,7 @@ class SettingsProvider extends ChangeNotifier
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('English',style:AppTextStyles.bodyText2,),
+                      Text('English',style:AppTextStyles.body25_meseri,),
                       Icon(Icons.check,)
 
                     ],

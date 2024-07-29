@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami2/core/colors/colors.dart';
-import 'package:islami2/core/styles/body_style.dart';
+
 
 import 'package:provider/provider.dart';
 
@@ -22,7 +22,7 @@ class HadethTap extends StatelessWidget {
             children: [
               const Image(image: AssetImage('assets/images/hadeth_logo.png')),
               const Divider(thickness: 3, color: defcolor),
-              const Text('الأحاديث', style: AppTextStyles.heading1),
+               Text('الأحاديث', style: Theme.of(context).textTheme.titleLarge),
               const Divider(color: defcolor, thickness: 3),
               Expanded(
                 child: ListView.builder(
