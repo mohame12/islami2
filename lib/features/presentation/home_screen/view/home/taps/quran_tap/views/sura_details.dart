@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 //import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:islami2/core/colors/colors.dart';
 import 'package:islami2/features/presentation/home_screen/view/home/taps/quran_tap/views/sura_model.dart';
 import 'package:provider/provider.dart';
 
@@ -27,13 +28,13 @@ class SuraDetails extends StatelessWidget {
         return Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/images/background.png')),
+                image: AssetImage('assets/images/background.png'),fit: BoxFit.cover),
           ),
           child: Scaffold(
-            backgroundColor: Colors.transparent,
+
             appBar: AppBar(
-              backgroundColor: Colors.transparent,
-              title: Text('islami', style: GoogleFonts.elMessiri(
+
+              title: Text('اسلامي', style: GoogleFonts.elMessiri(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
               ),),
@@ -62,7 +63,7 @@ class SuraDetails extends StatelessWidget {
                     thickness: 1,
                     indent: 41,
                     endIndent: 41,
-                    color: Color(0xffB7935F),
+                    color: defcolor,
                   ),
                   Expanded(
                     child: ListView.builder(itemBuilder: (context, index) {

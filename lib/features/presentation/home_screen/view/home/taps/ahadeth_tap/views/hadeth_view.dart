@@ -14,10 +14,10 @@ class HadethView extends StatelessWidget {
       decoration: const BoxDecoration(
           image: DecorationImage(image: AssetImage('assets/images/background.png'),fit: BoxFit.cover)
       ),
-      child: Scaffold(backgroundColor: Colors.transparent,
+      child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          title: Text('اسلامي',style: AppTextStyles.heading1,),
+
+          title: Text('اسلامي'),
           centerTitle: true,
         ),
         body: Padding(

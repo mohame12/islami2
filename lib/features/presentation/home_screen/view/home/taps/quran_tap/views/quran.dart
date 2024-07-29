@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:islami2/core/colors/colors.dart';
 import 'package:islami2/features/presentation/home_screen/view/home/taps/quran_tap/views/sura_details.dart';
 import 'package:islami2/features/presentation/home_screen/view/home/taps/quran_tap/views/sura_model.dart';
 
@@ -144,7 +145,7 @@ class QuranTap extends StatelessWidget {
           ),
           Divider(
             thickness: 3,
-            color: Color(0xffB7935F),
+            color: defcolor,
           ),
           Container(
             child: Table(
@@ -173,7 +174,7 @@ class QuranTap extends StatelessWidget {
           ),
           Divider(
             thickness: 3,
-            color: Color(0xffB7935F),
+            color: defcolor,
           ),
           Expanded(
             child: ListView.separated(separatorBuilder: (context,index){

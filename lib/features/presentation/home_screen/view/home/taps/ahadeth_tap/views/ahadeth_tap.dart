@@ -16,8 +16,6 @@ class HadethTap extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
-
       body: Consumer<HadethProvider>(
         builder: (context, provider, child) {
           return Column(
