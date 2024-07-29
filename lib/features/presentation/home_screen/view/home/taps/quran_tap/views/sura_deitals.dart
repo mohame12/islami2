@@ -33,7 +33,7 @@ class SuraDetails extends StatelessWidget {
             backgroundColor: Colors.transparent,
             appBar: AppBar(
               backgroundColor: Colors.transparent,
-              title: Text(model.name, style: GoogleFonts.elMessiri(
+              title: Text('islami', style: GoogleFonts.elMessiri(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
               ),),
@@ -41,7 +41,7 @@ class SuraDetails extends StatelessWidget {
             ),
             body: Card(
               margin: EdgeInsets.all(12),
-              color: Color(0x80B7935F),
+              color: Colors.white,
               elevation: 4,
               shape: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(25),
@@ -49,15 +49,26 @@ class SuraDetails extends StatelessWidget {
                     color: Colors.transparent,
                   )
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ListView.builder(itemBuilder: (context, index) {
-                  return Text('${provider.verses[index]}(${index + 1})',
-                    textDirection: TextDirection.rtl,
-                    textAlign: TextAlign.center,
-                    style:TextStyle(fontSize: 25)
-                    );
-                }, itemCount: provider.verses.length,),
+              child: Column(
+                children: [
+                  Text(model.name, style: GoogleFonts.elMessiri(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),),
+                  Divider(
+                    thickness: 3,
+                    color: Color(0xffB7935F),
+                  ),
+                  Expanded(
+                    child: ListView.builder(itemBuilder: (context, index) {
+                      return Text('${provider.verses[index]}(${index + 1})',
+                        textDirection: TextDirection.rtl,
+                        textAlign: TextAlign.center,
+                        style:TextStyle(fontSize: 25)
+                        );
+                    }, itemCount: provider.verses.length,),
+                  ),
+                ],
               ),
             ),
 
