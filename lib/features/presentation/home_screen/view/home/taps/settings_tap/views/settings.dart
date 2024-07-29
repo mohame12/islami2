@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 
 import '../../../../../../../../core/colors/colors.dart';
 
+
 class SettingsTap extends StatelessWidget {
   const SettingsTap({super.key});
 
@@ -27,6 +28,7 @@ class SettingsTap extends StatelessWidget {
                 GestureDetector(
                   onTap: () {
                     provider.themeNavPressed(context: context);
+
                   },
                   child: Container(
                     width: double.infinity,
