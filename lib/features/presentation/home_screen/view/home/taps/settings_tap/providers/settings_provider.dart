@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:islami2/core/colors/colors.dart';
+import 'package:islami2/core/shared_pref/shared_pref.dart';
 import 'package:islami2/core/styles/body_style.dart';
 
 class SettingsProvider extends ChangeNotifier
@@ -9,11 +10,15 @@ class SettingsProvider extends ChangeNotifier
 
   bool isdark=false;
   bool selectLight=true;
+  String theme='';
+
+
 
   changeToLightTheme()
   {
     isdark=false;
     selectLight=true;
+    UserDataFromStorage.setThemeIsDarkMode(isdark);
     notifyListeners();
   }
 
@@ -21,6 +26,14 @@ class SettingsProvider extends ChangeNotifier
   {
     isdark=true;
     selectLight=false;
+    UserDataFromStorage.setThemeIsDarkMode(isdark);
+    notifyListeners();
+  }
+
+  lastTheme()
+  {
+    isdark=UserDataFromStorage.themeIsDarkMode;
+    selectLight = !isdark;
     notifyListeners();
   }
 

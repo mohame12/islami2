@@ -12,7 +12,12 @@ import 'package:islami2/features/presentation/home_screen/view/home/taps/setting
 import 'package:islami2/features/presentation/splash_view/views/splash_screen.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+import 'core/shared_pref/shared_pref.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await UserDataFromStorage.getData();
+
   runApp(MyApp());
 }
 
@@ -25,12 +30,14 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => Provider1(),),
         ChangeNotifierProvider(create: (context) => HadethProvider(),),
         ChangeNotifierProvider(create: (context) => QoranProvider()),
-        ChangeNotifierProvider(create: (context) => SettingsProvider(),)
+        ChangeNotifierProvider(create: (context) => SettingsProvider()..lastTheme(),)
       ],
       child: Consumer<SettingsProvider>(
         builder: (context, provider, child) {
           return MaterialApp(
-            theme: provider.isdark?darkTheme:lightTheme,
+            theme: lightTheme,
+            darkTheme: darkTheme,
+            themeMode:provider.isdark?ThemeMode.dark:ThemeMode.light,
             debugShowCheckedModeBanner: false,
             initialRoute: SplashScreen.id,
             routes: {

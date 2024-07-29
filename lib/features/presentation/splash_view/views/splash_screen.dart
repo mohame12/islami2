@@ -3,6 +3,7 @@ import 'package:islami2/features/presentation/home_screen/view/home/home_view.da
 import 'package:islami2/features/presentation/home_screen/view/home/taps/settings_tap/providers/settings_provider.dart';
 import 'package:provider/provider.dart';
 
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
   static const String id='SplashScreen';
@@ -17,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     super.initState();
     Future.delayed(const Duration(seconds: 2),
-        (){
+        () {
       Navigator.pushReplacementNamed(context, HomeView.id);
         }
     );
@@ -32,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen>
         image: DecorationImage(image:settingpro.isdark?const AssetImage('assets/images/bg.png') :const AssetImage('assets/images/bg2.png'),fit: BoxFit.cover)
       ),
       child: const Scaffold(
-        backgroundColor: Color(0xffFFFFFF),
+        backgroundColor: Colors.transparent,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
