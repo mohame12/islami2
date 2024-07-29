@@ -5,43 +5,53 @@ import 'package:islami2/core/styles/body_style.dart';
 
 ThemeData lightTheme=ThemeData(
     primaryColor: defcolor,
+    textTheme: TextTheme(headlineLarge: AppTextStyles.heading1.copyWith(color: Colors.black)),
     scaffoldBackgroundColor: Colors.transparent,
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        elevation: 20,
         backgroundColor: Color(0xffB7935F),
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.black
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.white,
+        showUnselectedLabels: false,
+        showSelectedLabels: false,
     ),
-    appBarTheme: const AppBarTheme(
-        centerTitle: true,
+    appBarTheme:  AppBarTheme(
         systemOverlayStyle: SystemUiOverlayStyle(
             statusBarColor: Colors.transparent,
             statusBarIconBrightness: Brightness.dark
         ),
+        centerTitle: true,
         backgroundColor: Colors.transparent,
-        titleTextStyle: AppTextStyles.heading1
+        titleTextStyle: AppTextStyles.heading1,
+        iconTheme: IconThemeData(color: Colors.black)
     )
 );
 
+
+
+
+
 ThemeData darkTheme=ThemeData(
-    primaryColor: Color(0xffFACC1D),
+    primaryColor: darkcolor,
+    textTheme: TextTheme(headlineLarge: AppTextStyles.heading1.copyWith(color: Colors.white)),
     scaffoldBackgroundColor: Colors.transparent,
-    textTheme: const TextTheme(bodyMedium: TextStyle(color: Colors.white)),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        elevation: 20,
-        backgroundColor: Colors.black12,
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.orange,
-        unselectedItemColor: Colors.grey
+      backgroundColor: Color(0xff141A2E),
+      type: BottomNavigationBarType.fixed,
+      selectedItemColor: darkcolor,
+      unselectedItemColor: Colors.white,
+      showUnselectedLabels: false,
+      showSelectedLabels: false,
     ),
-    appBarTheme: const AppBarTheme(
-        centerTitle: true,
+    appBarTheme:  AppBarTheme(
         systemOverlayStyle: SystemUiOverlayStyle(
-            statusBarColor: Colors.black,
+            statusBarColor: Colors.transparent,
             statusBarIconBrightness: Brightness.light
         ),
-        backgroundColor: Colors.black12,
-        titleTextStyle: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 20),
-        actionsIconTheme: IconThemeData(color: Colors.white)
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        titleTextStyle: AppTextStyles.heading1.copyWith(color: Colors.white),
+        iconTheme: IconThemeData(color: Colors.white)
     )
 );
+

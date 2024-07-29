@@ -6,6 +6,21 @@ import 'package:islami2/core/styles/body_style.dart';
 
 class SettingsProvider extends ChangeNotifier
 {
+
+  bool isdark=false;
+
+  changeToLightTheme()
+  {
+    isdark=false;
+    notifyListeners();
+  }
+
+  changeToDarkTheme()
+  {
+    isdark=true;
+    notifyListeners();
+  }
+
   themeNavPressed({required BuildContext context})
   {
     showModalBottomSheet(shape: RoundedRectangleBorder(borderRadius: BorderRadiusDirectional.only(topStart: Radius.circular(20),topEnd: Radius.circular(20))),context: context, builder: (context) =>
@@ -15,7 +30,10 @@ class SettingsProvider extends ChangeNotifier
         mainAxisSize: MainAxisSize.min,
         children: [
         GestureDetector(
-          onTap: (){},
+          onTap: (){
+            changeToLightTheme();
+            Navigator.pop(context);
+          },
           child: Padding(
             padding: const EdgeInsets.all(10),
             child:
@@ -30,7 +48,10 @@ class SettingsProvider extends ChangeNotifier
           ),
         ),
         GestureDetector(
-          onTap: (){},
+          onTap: (){
+            changeToDarkTheme();
+            Navigator.pop(context);
+          },
           child: Padding(
             padding: const EdgeInsets.all(10),
             child:

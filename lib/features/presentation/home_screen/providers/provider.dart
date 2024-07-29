@@ -11,11 +11,11 @@ class Provider1 extends ChangeNotifier
   int index=0;
   List<BottomNavigationBarItem>navList=
   [
-    const BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/icon_quran.png')), label: '',backgroundColor: Color(0xffB7935F),),
-    const BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/icon_hadeth.png')), label: '',backgroundColor: Color(0xffB7935F),),
-    const BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/icon_sebha.png')), label: '',backgroundColor: Color(0xffB7935F),),
-    const BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/icon_radio.png')), label: '',backgroundColor: Color(0xffB7935F),),
-    const BottomNavigationBarItem(icon: Icon(Icons.settings), label: '',backgroundColor: Color(0xffB7935F),),
+    const BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/icon_quran.png')), label: '',),
+    const BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/icon_hadeth.png')), label: ''),
+    const BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/icon_sebha.png')), label: '',),
+    const BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/icon_radio.png')), label: '',),
+    const BottomNavigationBarItem(icon: Icon(Icons.settings), label: '',),
   ];
   List<Widget>list_of_body=[
     QuranTap(),
