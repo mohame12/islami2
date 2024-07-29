@@ -6,6 +6,7 @@ import 'package:islami2/features/presentation/home_screen/view/home/taps/ahadeth
 import 'package:islami2/features/presentation/home_screen/view/home/taps/ahadeth_tap/views/ahadeth_tap.dart';
 import 'package:islami2/features/presentation/home_screen/view/home/taps/ahadeth_tap/views/hadeth_view.dart';
 import 'package:islami2/features/presentation/home_screen/view/home/taps/quran_tap/views/sura_details.dart';
+import 'package:islami2/features/presentation/splash_view/views/splash_screen.dart';
 import 'package:provider/provider.dart';
 void main()
 {
@@ -25,12 +26,13 @@ class MyApp extends StatelessWidget {
     ],
     child: MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: HomeView.id,
+      initialRoute: SplashScreen.id,
       routes: {
         HomeView.id:(context)=>HomeView(),
         HadethTap.id:(context)=>HadethTap(),
         HadethView.id:(context)=>HadethView(),
         SuraDetails.id:(context)=>SuraDetails(),
+        SplashScreen.id:(context)=>SplashScreen()
       },
     ),
   );
