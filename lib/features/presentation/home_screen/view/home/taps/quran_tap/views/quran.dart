@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:islami2/core/colors/colors.dart';
 import 'package:islami2/features/presentation/home_screen/view/home/taps/quran_tap/views/sura_details.dart';
 import 'package:islami2/features/presentation/home_screen/view/home/taps/quran_tap/views/sura_model.dart';
@@ -143,7 +142,7 @@ class QuranTap extends StatelessWidget {
             'assets/images/qur2an_screen_logo.png',
             height: 227,
           ),
-          Divider(
+          const Divider(
             thickness: 3,
             color: defcolor,
           ),
@@ -153,61 +152,47 @@ class QuranTap extends StatelessWidget {
               children: [
                 TableRow(children: [
                   Text(
-                    'Sura Name',
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.elMessiri(
-                      fontSize: 25,
-                      fontWeight: FontWeight.w600,
-                    ),
+                      'عدد الايات',
+                      textAlign: TextAlign.center,
+                      style:Theme.of(context).textTheme.headlineLarge
                   ),
                   Text(
-                    'Sura Name',
+                    'اسم السوره',
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.elMessiri(
-                      fontSize: 25,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    style: Theme.of(context).textTheme.headlineLarge,
                   ),
                 ]),
               ],
             ),
           ),
-          Divider(
+          const Divider(
             thickness: 3,
             color: defcolor,
           ),
           Expanded(
-            child: ListView.separated(separatorBuilder: (context,index){
-              return Divider(
-                color: Color(0xffB7935F),
-                indent: 60,
-                endIndent: 60,
-              );
-            },
-              itemBuilder: (context,index){
+            child: Padding(
+              padding: const EdgeInsets.only(top: 17.5),
+              child: ListView.separated(
+                itemBuilder: (context,index){
 
-                return Row(
-                  children: [
-                    Spacer(),
-                    Text(ayaNumber[index],style: GoogleFonts.inter(
-                      fontSize: 25,
-                      fontWeight: FontWeight.w400,
-                    ),),
-                    Spacer(),
-                    InkWell(
-                      onTap:(){
-                        Navigator.pushNamed(context, SuraDetails.id,
-                            arguments: SuraModel(suraName[index],index));
-                      },
-                      child: Text(suraName[index],style: GoogleFonts.inter(
-                        fontSize: 25,
-                        fontWeight: FontWeight.w400,
-                      ),),
-                    ),
-                    Spacer(),
-                  ],
-                );
-              }, itemCount: suraName.length,),
+                  return Row(
+                    children: [
+                      const Spacer(),
+                      Text(ayaNumber[index],style:Theme.of(context).textTheme.bodyMedium),
+                      const Spacer(flex: 2,),
+                      InkWell(
+                        onTap:(){
+                          Navigator.pushNamed(context, SuraDetails.id,
+                              arguments: SuraModel(suraName[index],index));
+                        },
+                        child: Text(suraName[index],
+                            style:Theme.of(context).textTheme.bodyMedium),
+                      ),
+                      const Spacer(),
+                    ],
+                  );
+                }, itemCount: suraName.length, separatorBuilder: (BuildContext context, int index) {return const SizedBox(height: 20,); },),
+            ),
           )
         ]);
   }

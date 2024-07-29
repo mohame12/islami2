@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:islami2/features/presentation/home_screen/view/home/taps/settings_tap/providers/settings_provider.dart';
 import 'package:provider/provider.dart';
 
+import '../../../../../../../../core/colors/colors.dart';
+
 class SettingsTap extends StatelessWidget {
   const SettingsTap({super.key});
 
@@ -20,7 +22,7 @@ class SettingsTap extends StatelessWidget {
               children: [
                 SizedBox(height: 50,),
                 Text('T H E M E S',
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),),
                 SizedBox(height: 30,),
                 GestureDetector(
                   onTap: () {
@@ -30,7 +32,7 @@ class SettingsTap extends StatelessWidget {
                     width: double.infinity,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        border: Border.all(color: Colors.black)
+                        border: Border.all(color:  provider.isdark? darkcolor:defcolor)
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -43,7 +45,7 @@ class SettingsTap extends StatelessWidget {
 
 
                 Text('L A N G U A G E',
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),),
                 SizedBox(height: 30,),
                 GestureDetector(
                   onTap: (){
@@ -53,7 +55,7 @@ class SettingsTap extends StatelessWidget {
                     width: double.infinity,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        border: Border.all(color: Colors.black)
+                        border: Border.all( color:provider.isdark? darkcolor:defcolor)
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
