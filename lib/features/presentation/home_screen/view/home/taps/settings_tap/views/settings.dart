@@ -3,7 +3,7 @@ import 'package:islami2/features/presentation/home_screen/view/home/taps/setting
 import 'package:provider/provider.dart';
 
 import '../../../../../../../../core/colors/colors.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingsTap extends StatelessWidget {
   const SettingsTap({super.key});
@@ -21,10 +21,10 @@ class SettingsTap extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 50,),
-                Text('T H E M E S',
+                const SizedBox(height: 50,),
+                Text(AppLocalizations.of(context)!.themes,
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),),
-                SizedBox(height: 30,),
+                const SizedBox(height: 30,),
                 GestureDetector(
                   onTap: () {
                     provider.themeNavPressed(context: context);
@@ -38,20 +38,20 @@ class SettingsTap extends StatelessWidget {
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text('Light', style: TextStyle(fontSize: 20),),
+                      child: Text(provider.isdark?AppLocalizations.of(context)!.dark:AppLocalizations.of(context)!.light, style: const TextStyle(fontSize: 20),),
                     ),
                   ),
                 ),
-                SizedBox(height: 50,),
+                const SizedBox(height: 50,),
 
 
 
-                Text('L A N G U A G E',
+                Text(AppLocalizations.of(context)!.language,
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),),
-                SizedBox(height: 30,),
+                const SizedBox(height: 30,),
                 GestureDetector(
                   onTap: (){
-                    provider.LanguageNavPressed(context: context);
+                    provider.languageNavPressed(context: context);
                   },
                   child: Container(
                     width: double.infinity,
@@ -61,7 +61,7 @@ class SettingsTap extends StatelessWidget {
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text('Arabic', style: TextStyle(fontSize: 20),),
+                      child: Text(provider.isArabic?AppLocalizations.of(context)!.arabic:AppLocalizations.of(context)!.english, style: const TextStyle(fontSize: 20),),
                     ),
                   ),
                 )

@@ -4,6 +4,7 @@ import 'package:islami2/core/colors/colors.dart';
 import 'package:islami2/features/presentation/home_screen/view/home/taps/settings_tap/providers/settings_provider.dart';
 import 'package:provider/provider.dart';
 import '../models/hadeth_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HadethView extends StatelessWidget {
   const HadethView({super.key});
@@ -19,7 +20,7 @@ class HadethView extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
 
-          title: const Text('اسلامي',),
+          title:  Text(AppLocalizations.of(context)!.islami),
           centerTitle: true,
         ),
         body: Padding(

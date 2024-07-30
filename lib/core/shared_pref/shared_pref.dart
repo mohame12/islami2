@@ -17,7 +17,9 @@ class UserDataFromStorage {
   static late String userCity;
   static late String userId;
   static late bool userIsLogin;
+  static late bool userLanguage;
   static late bool userIsCompany;
+
 
   static late bool themeIsDarkMode;
 
@@ -201,7 +203,10 @@ class UserDataFromStorage {
     _setData();
   }
 
-
+  static setUserLanguage(bool block) {
+    userLanguage = block;
+    _setData();
+  }
 
   static setThemeIsDarkMode(bool darkMode) {
     themeIsDarkMode = darkMode;
@@ -242,6 +247,7 @@ class UserDataFromStorage {
 
     final prefs= await SharedPreferences.getInstance();
     prefs.setBool("userIsLogin",userIsLogin);
+    prefs.setBool("userLanguage",userLanguage);
     prefs.setBool("userIsCompany",userIsCompany);
 
     prefs.setString('userName',userName);
@@ -289,6 +295,7 @@ class UserDataFromStorage {
 
     final prefs = await SharedPreferences.getInstance();
     userIsLogin = prefs.getBool("userIsLogin")?? false;
+    userLanguage = prefs.getBool("userLanguage")?? false;
     userIsCompany = prefs.getBool("userIsCompany")?? true;
     themeIsDarkMode = prefs.getBool("themeIsDarkMode")?? false;
     onBoardingIsOpen = prefs.getBool("onBoardingIsOpen")?? false;
