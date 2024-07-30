@@ -3,6 +3,7 @@ import 'package:islami2/core/colors/colors.dart';
 import 'package:provider/provider.dart';
 
 import '../../settings_tap/providers/settings_provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class RadioTap extends StatelessWidget {
   const RadioTap({super.key});
@@ -12,13 +13,11 @@ class RadioTap extends StatelessWidget {
     var settingpro=Provider.of<SettingsProvider>(context);
 
     return Column(
-      //crossAxisAlignment: CrossAxisAlignment.stretch,
-      //mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Spacer(),
         Image.asset('assets/images/radio_image.png',height: 222,),
         const Spacer(),
-        Text('إذاعة القرآن الكريم',style:
+        Text(AppLocalizations.of(context)!.ezaetElqoranElkarem,style:
           Theme.of(context).textTheme.headlineLarge,textDirection: TextDirection.rtl,
           textAlign: TextAlign.center,
         ),

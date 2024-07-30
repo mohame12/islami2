@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islami2/core/colors/colors.dart';
 import 'package:islami2/features/presentation/home_screen/view/home/taps/quran_tap/views/sura_details.dart';
 import 'package:islami2/features/presentation/home_screen/view/home/taps/quran_tap/views/sura_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranTap extends StatelessWidget {
   QuranTap({super.key});
@@ -146,24 +147,22 @@ class QuranTap extends StatelessWidget {
             thickness: 3,
             color: defcolor,
           ),
-          Container(
-            child: Table(
-              //border: TableBorder.all(color: Color(0xffB7935F),),
-              children: [
-                TableRow(children: [
-                  Text(
-                      'عدد الايات',
-                      textAlign: TextAlign.center,
-                      style:Theme.of(context).textTheme.headlineLarge
-                  ),
-                  Text(
-                    'اسم السوره',
+          Table(
+            //border: TableBorder.all(color: Color(0xffB7935F),),
+            children: [
+              TableRow(children: [
+                Text(AppLocalizations.of(context)!.ayatNumber
+                    ,
                     textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.headlineLarge,
-                  ),
-                ]),
-              ],
-            ),
+                    style:Theme.of(context).textTheme.headlineLarge
+                ),
+                Text(
+                  AppLocalizations.of(context)!.suraName,
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.headlineLarge,
+                ),
+              ]),
+            ],
           ),
           const Divider(
             thickness: 3,

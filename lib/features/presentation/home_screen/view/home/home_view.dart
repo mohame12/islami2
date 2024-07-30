@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islami2/features/presentation/home_screen/providers/provider.dart';
 import 'package:islami2/features/presentation/home_screen/view/home/taps/settings_tap/providers/settings_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeView extends StatelessWidget {
     HomeView({super.key});
@@ -15,7 +16,7 @@ class HomeView extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image:settingpr.isdark?AssetImage('assets/images/home_dark_background.png') :AssetImage('assets/images/background.png')
+          image:settingpr.isdark?const AssetImage('assets/images/home_dark_background.png') :const AssetImage('assets/images/background.png')
              , fit: BoxFit.cover
         )
       ),
@@ -23,7 +24,7 @@ class HomeView extends StatelessWidget {
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
-          title: Text('اسلامي', style: Theme.of(context).textTheme.titleLarge,),
+          title: Text(AppLocalizations.of(context)!.islami, style: Theme.of(context).textTheme.titleLarge,),
 
         ),
         bottomNavigationBar:BottomNavigationBar(

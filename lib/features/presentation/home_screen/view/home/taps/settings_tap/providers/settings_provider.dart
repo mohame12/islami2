@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:islami2/core/colors/colors.dart';
 import 'package:islami2/core/shared_pref/shared_pref.dart';
 import 'package:islami2/core/styles/body_style.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class SettingsProvider extends ChangeNotifier
 {
@@ -11,6 +13,8 @@ class SettingsProvider extends ChangeNotifier
   bool isdark=false;
   bool selectLight=true;
   String theme='';
+  bool isArabic=true;
+  bool selectArbice=true;
 
 
 
@@ -56,7 +60,7 @@ class SettingsProvider extends ChangeNotifier
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Light',style:isdark?AppTextStyles.body25_meseri.copyWith(color:selectLight?defcolor :Colors.white):AppTextStyles.body25_meseri.copyWith(color:selectLight? defcolor:Colors.black)),
+                Text(AppLocalizations.of(context)!.light,style:isdark?AppTextStyles.body25_meseri.copyWith(color:selectLight?defcolor :Colors.white):AppTextStyles.body25_meseri.copyWith(color:selectLight? defcolor:Colors.black)),
                 Icon(Icons.check,color:(isdark)?Colors.white:selectLight?defcolor:Colors.black,)
 
               ],
@@ -74,7 +78,7 @@ class SettingsProvider extends ChangeNotifier
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Dark',style:isdark?AppTextStyles.body25_meseri.copyWith(color:selectLight? Colors.white:defcolor):AppTextStyles.body25_meseri.copyWith(color:selectLight? Colors.black:defcolor)),
+                Text(AppLocalizations.of(context)!.dark,style:isdark?AppTextStyles.body25_meseri.copyWith(color:selectLight? Colors.white:defcolor):AppTextStyles.body25_meseri.copyWith(color:selectLight? Colors.black:defcolor)),
                 Icon(Icons.check,color:(isdark)?selectLight?Colors.white:defcolor:Colors.black)
 
               ],
@@ -88,39 +92,68 @@ class SettingsProvider extends ChangeNotifier
   }
 
 
-  LanguageNavPressed({required BuildContext context})
+
+  changeToArabic()
   {
-    showModalBottomSheet(shape: RoundedRectangleBorder(borderRadius: BorderRadiusDirectional.only(topStart: Radius.circular(20),topEnd: Radius.circular(20))),context: context, builder: (context) =>
+   isArabic=true;
+   selectArbice=true;
+   UserDataFromStorage.setUserLanguage(isArabic);
+   notifyListeners();
+  }
+  changeToEnglish()
+  {
+    isArabic=false;
+    selectArbice=false;
+    UserDataFromStorage.setUserLanguage(isArabic);
+    notifyListeners();
+  }
+
+  lastLanguage()
+  {
+    isArabic=UserDataFromStorage.userLanguage;
+    selectArbice=isArabic;
+    notifyListeners();
+  }
+
+  languageNavPressed({required BuildContext context})
+  {
+    showModalBottomSheet(backgroundColor: isdark?Color(0xff141A2E):Colors.white,shape: RoundedRectangleBorder(borderRadius: BorderRadiusDirectional.only(topStart: Radius.circular(20),topEnd: Radius.circular(20))),context: context, builder: (context) =>
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               GestureDetector(
-                onTap: (){},
+                onTap: (){
+                  changeToArabic();
+                  Navigator.pop(context);
+                },
                 child: Padding(
                   padding: const EdgeInsets.all(10),
                   child:
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Arabic',style:AppTextStyles.body25_meseri.copyWith(color: defcolor)),
-                      Icon(Icons.check,color: defcolor,)
+                      Text(AppLocalizations.of(context)!.arabic,style:isdark?AppTextStyles.body25_meseri.copyWith(color:selectArbice?defcolor :Colors.white):AppTextStyles.body25_meseri.copyWith(color:selectArbice? defcolor:Colors.black)),
+                      Icon(Icons.check,color:(isdark)?Colors.white:selectArbice?defcolor:Colors.black,)
 
                     ],
                   ),
                 ),
               ),
               GestureDetector(
-                  onTap: (){},
+                onTap: (){
+                  changeToEnglish();
+                  Navigator.pop(context);
+                },
                 child: Padding(
                   padding: const EdgeInsets.all(10),
                   child:
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('English',style:AppTextStyles.body25_meseri,),
-                      Icon(Icons.check,)
+                      Text(AppLocalizations.of(context)!.english,style:isdark?AppTextStyles.body25_meseri.copyWith(color:selectArbice? Colors.white:defcolor):AppTextStyles.body25_meseri.copyWith(color:selectArbice? Colors.black:defcolor)),
+                      Icon(Icons.check,color:(isdark)?selectArbice?Colors.white:defcolor:Colors.black)
 
                     ],
                   ),

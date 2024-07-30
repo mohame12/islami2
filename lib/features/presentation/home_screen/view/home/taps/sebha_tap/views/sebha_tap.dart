@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 
 import '../../../../../../../../core/styles/body_style.dart';
 import '../providers/sebha_provider.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class SebhaTap extends StatelessWidget {
   const SebhaTap({super.key});
 
@@ -47,7 +47,7 @@ class SebhaTap extends StatelessWidget {
                       ]),
                 ),
                 const SizedBox(height: 26,),
-                Text('عدد التسبيحات', style:Theme.of(context).textTheme.headlineLarge,),
+                Text(AppLocalizations.of(context)!.numberOfTasbeh, style:Theme.of(context).textTheme.headlineLarge,),
                 const SizedBox(height: 26,
                   width: double.infinity,),
 
@@ -71,7 +71,7 @@ class SebhaTap extends StatelessWidget {
                   ),
                   child: Center(
                       child: Text(
-                        '${provider.allah[provider.allalistindex]}', style: AppTextStyles.body25_meseri,)),
+                        provider.allah[provider.allalistindex], style: AppTextStyles.body25_meseri,)),
                 ),
               ],
             );

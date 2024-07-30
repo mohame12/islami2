@@ -5,6 +5,7 @@ import 'package:islami2/features/presentation/home_screen/view/home/taps/setting
 import 'package:provider/provider.dart';
 
 import '../../../../../providers/qoran_provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SuraDetails extends StatelessWidget {
    SuraDetails({super.key});
@@ -28,19 +29,19 @@ class SuraDetails extends StatelessWidget {
         return Container(
           decoration:  BoxDecoration(
             image: DecorationImage(
-                image:settingpro.isdark?AssetImage('assets/images/home_dark_background.png'):AssetImage('assets/images/background.png'),fit: BoxFit.cover),
+                image:settingpro.isdark?const AssetImage('assets/images/home_dark_background.png'):const AssetImage('assets/images/background.png'),fit: BoxFit.cover),
           ),
           child: Scaffold(
 
             appBar: AppBar(
 
-              title: const Text('اسلامي', ),
+              title:Text(AppLocalizations.of(context)!.islami, ),
             ),
             body: Padding(
               padding: const EdgeInsets.all(29),
               child: Card(
 
-                color:settingpro.isdark? Color(0xff141A2E).withOpacity(0.79):Colors.white.withOpacity(0.79),
+                color:settingpro.isdark? const Color(0xff141A2E).withOpacity(0.79):Colors.white.withOpacity(0.79),
                 elevation: 2,
                 shape: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(25),
@@ -52,7 +53,7 @@ class SuraDetails extends StatelessWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(top: 39),
-                      child: Text(model.name, style: Theme.of(context).textTheme.titleLarge?.copyWith(color: settingpro.isdark?Color(0xffFACC1D):Colors.black)),
+                      child: Text(model.name, style: Theme.of(context).textTheme.titleLarge?.copyWith(color: settingpro.isdark?const Color(0xffFACC1D):Colors.black)),
                     ),
                     const Divider(
                       thickness: 1,
@@ -65,7 +66,7 @@ class SuraDetails extends StatelessWidget {
                         return Text('${provider.verses[index]}(${index + 1})',
                             textDirection: TextDirection.rtl,
                             textAlign: TextAlign.center,
-                            style:Theme.of(context).textTheme.bodyMedium?.copyWith(color: settingpro.isdark?Color(0xffFACC1D):Colors.black)
+                            style:Theme.of(context).textTheme.bodyMedium?.copyWith(color: settingpro.isdark?const Color(0xffFACC1D):Colors.black)
                         );
                       }, itemCount: provider.verses.length,),
                     ),

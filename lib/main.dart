@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:islami2/core/themes/mytheme.dart';
 import 'package:islami2/features/presentation/home_screen/providers/provider.dart';
 import 'package:islami2/features/presentation/home_screen/providers/qoran_provider.dart';
@@ -11,7 +12,7 @@ import 'package:islami2/features/presentation/home_screen/view/home/taps/setting
 import 'package:islami2/features/presentation/home_screen/view/home/taps/settings_tap/views/settings.dart';
 import 'package:islami2/features/presentation/splash_view/views/splash_screen.dart';
 import 'package:provider/provider.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'core/shared_pref/shared_pref.dart';
 
 Future<void> main() async {
@@ -30,11 +31,23 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => Provider1(),),
         ChangeNotifierProvider(create: (context) => HadethProvider(),),
         ChangeNotifierProvider(create: (context) => QoranProvider()),
-        ChangeNotifierProvider(create: (context) => SettingsProvider()..lastTheme(),)
+        ChangeNotifierProvider(create: (context) => SettingsProvider()..lastTheme()..lastLanguage(),)
       ],
       child: Consumer<SettingsProvider>(
         builder: (context, provider, child) {
           return MaterialApp(
+
+            localizationsDelegates: [
+              AppLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: [
+              Locale('en'), // English
+              Locale('ar'), // Spanish
+            ],
+            locale:provider.isArabic?Locale('ar') :Locale('en'),
             theme: lightTheme,
             darkTheme: darkTheme,
             themeMode:provider.isdark?ThemeMode.dark:ThemeMode.light,
