@@ -3,7 +3,6 @@ import 'package:islami2/core/colors/colors.dart';
 import 'package:islami2/features/presentation/home_screen/view/home/taps/quran_tap/views/sura_model.dart';
 import 'package:islami2/features/presentation/home_screen/view/home/taps/settings_tap/providers/settings_provider.dart';
 import 'package:provider/provider.dart';
-
 import '../../../../../providers/qoran_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
