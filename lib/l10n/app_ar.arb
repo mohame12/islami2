@@ -1,0 +1,14 @@
+{
+  "islami": "اسلامي" ,
+  "ayatNumber": "عدد الايات",
+  "suraName": "اسم السوره" ,
+  "ahadeth": "احاديث",
+  "numberOfTasbeh": "عدد التسبيحات",
+  "ezaetElqoranElkarem": "اذاعه القراءن الكريم",
+  "themes": "المود",
+  "language": "اللغة",
+  "light": "نهاري",
+  "dark": "ليلي",
+  "arabic": "عربي",
+  "english":"انجليزي"
+}

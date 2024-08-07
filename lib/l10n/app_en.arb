@@ -1,0 +1,14 @@
+{
+  "islami": "Islami" ,
+  "ayatNumber": "AyatNumber",
+  "suraName": "SuraName" ,
+  "ahadeth": "Ahadeth",
+  "numberOfTasbeh": "Number Of Tasbeh",
+  "ezaetElqoranElkarem": "Ezaet Elqoran Elkarem",
+  "themes": "Themes",
+  "language": "Language",
+  "light": "Light",
+  "dark": "Dark",
+  "arabic": "Arabic",
+  "english":"English"
+}
